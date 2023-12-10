@@ -1,0 +1,28 @@
+package entities;
+
+public class Sala {
+	private int id;
+	private int capacidade;
+	
+	public Sala(int id, int capacidade) {
+		this.id = id;
+		this.capacidade = capacidade;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getCapacidade() {
+		return capacidade;
+	}
+
+	public void setCapacidade(int capacidade) {
+		this.capacidade = capacidade;
+	}
+	
+}
