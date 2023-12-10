@@ -1,0 +1,59 @@
+package entities;
+
+import java.util.Date;
+import services.IngressoService;
+
+public class Sessao {
+	private IngressoService ingressoService;
+	
+	private String filme;
+	private Date dataHora;
+	private int sala;
+	private String lugar;
+	
+	public Sessao() {
+
+	}
+
+	public Sessao(IngressoService ingressoService) {
+		this.ingressoService = ingressoService;
+	}
+
+	public String getFilme() {
+		return filme;
+	}
+
+	public void setFilme(String filme) {
+		this.filme = filme;
+	}
+
+	public Date getDataHora() {
+		return dataHora;
+	}
+
+	public void setDataHora(Date dataHora) {
+		this.dataHora = dataHora;
+	}
+
+	public int getSala() {
+		return sala;
+	}
+
+	public void setSala(int sala) {
+		this.sala = sala;
+	}
+
+	public String getLugar() {
+		return lugar;
+	}
+
+	public void setLugar(String lugar) {
+		this.lugar = lugar;
+	}
+	
+	public void venderIngresso(Ingresso ingresso) {
+		ingressoService.venderIngresso(ingresso);
+	}
+	
+	
+}
