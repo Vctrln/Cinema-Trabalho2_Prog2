@@ -1,27 +1,28 @@
 package entities;
 import java.util.List;
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Filme {
-	private String tituo;
+	private String titulo;
 	private Date duracao;
 	private String sinopse;
 	private List<Filme> filmes;
 	
-	public Filme(String tituo, Date duracao, String sinopse) {
+	public Filme(String titulo, Date duracao, String sinopse) {
 		super();
-		this.tituo = tituo;
+		this.titulo = titulo;
 		this.duracao = duracao;
 		this.sinopse = sinopse;
-		this.filmes = filmes;
+		this.filmes = new ArrayList<>();
 	}
 
-	public String getTituo() {
-		return tituo;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setTituo(String tituo) {
-		this.tituo = tituo;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public Date getDuracao() {
