@@ -1,0 +1,7 @@
+package services;
+
+import entities.Ingresso;
+
+public interface IngressoService {
+	void venderIngresso(Ingresso ingresso);
+}
