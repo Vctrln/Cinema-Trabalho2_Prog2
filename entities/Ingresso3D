@@ -1,0 +1,43 @@
+package entities;
+
+import java.util.Date;
+
+public class Ingresso3D implements Ingresso{
+	private double valor;
+	private String filme;
+	private Date dataHora;
+	private Sessao sessao;
+	private int lugar;
+
+	public Ingresso3D(double valor, String filme, 
+						  Date dataHora, Sessao sessao, int lugar) {
+		this.valor = valor;
+		this.filme = filme;
+		this.dataHora = dataHora;
+		this.sessao = sessao;
+		this.lugar = lugar;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+	@Override
+    public String getFilme() {
+        return filme;
+    }
+
+    @Override
+    public Date getDataHora() {
+        return dataHora;
+    }
+
+    @Override
+    public Sessao getSessao() {
+        return sessao;
+    }
+
+    @Override
+    public int getLugar() {
+        return lugar;
+    }
+}
