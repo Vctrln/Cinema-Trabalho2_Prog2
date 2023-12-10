@@ -1,0 +1,11 @@
+package entities;
+import java.util.Date;
+
+public interface Ingresso {
+	String getFilme();
+	Date getDataHora();
+    Sessao getSessao();
+    int getLugar();
+    double getValor();
+    
+    }
