@@ -1,0 +1,12 @@
+package services;
+
+import entities.Ingresso;
+
+public class IngressoServiceImpl implements IngressoService {
+		
+		@Override
+		public void venderIngresso(Ingresso ingresso) {
+			System.out.println("Ingresso vendido: " + ingresso.getValor());
+		}
+		
+}
