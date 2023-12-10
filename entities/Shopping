@@ -1,0 +1,20 @@
+package entities;
+
+class Shopping extends Localizacao {
+	private String nome;
+
+	public Shopping(String estado, String cidade, String bairro, String endereco, String nome) {
+		super(estado, cidade, bairro, endereco);
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
+}
