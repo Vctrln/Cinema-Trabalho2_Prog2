@@ -1,0 +1,43 @@
+package program;
+import services.IngressoService;
+import services.IngressoServiceImpl;
+import entities.Sessao;
+import entities.Ingresso;
+import java.util.Date;
+
+public class Cinema {
+	public static void main(String[] args) {
+	    IngressoService ingressoService = new IngressoServiceImpl();
+
+        Sessao sessao = new Sessao(ingressoService);
+
+        Ingresso ingresso = new Ingresso() {
+        	    @Override
+        	    public String getFilme() {
+        	        return "Nome do Filme";
+        	    }
+
+        	    @Override
+        	    public Date getDataHora() {
+        	        return null; 
+        	    }
+
+        	    @Override
+        	    public int getLugar() {
+        	        return 10; 
+        	    }
+
+        	    @Override
+        	    public Sessao getSessao() {
+        	        return new Sessao(new IngressoServiceImpl());
+        	    }
+
+        	    @Override
+        	    public double getValor() {
+        	        return 20.0; 
+        	    }
+        };
+
+        sessao.venderIngresso(ingresso);
+    }
+}
