@@ -4,9 +4,29 @@ import services.IngressoServiceImpl;
 import entities.Sessao;
 import entities.Ingresso;
 import java.util.Date;
-
+import java.util.Scanner;
 public class Cinema {
 	public static void main(String[] args) {
+		
+		Sala sala1 = new Sala(1, 160);
+
+        // Criando um scanner para obter entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Mostrando os assentos disponíveis antes da reserva
+        System.out.println("Antes da Reserva:");
+        sala1.mostrarAssentos();
+
+        // Reservando alguns assentos
+        System.out.println("\nReservar Assentos:");
+        sala1.reservarAssentos(scanner);
+
+        // Mostrando os assentos após a reserva
+        System.out.println("\nDepois da Reserva:");
+        sala1.mostrarAssentos();
+
+        // Fechando o scanner
+        scanner.close();
 	    IngressoService ingressoService = new IngressoServiceImpl();
 
         Sessao sessao = new Sessao(ingressoService);
@@ -34,7 +54,7 @@ public class Cinema {
 
         	    @Override
         	    public double getValor() {
-        	        return 20.0; 
+        	        return 0.0; 
         	    }
         };
 
