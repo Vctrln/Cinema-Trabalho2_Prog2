@@ -15,7 +15,6 @@ public class Cinema {
 		Sala sala1 = new Sala(1, 160);
 
         // Mostrando os assentos disponíveis antes da reserva
-        System.out.println("Antes da Reserva:");
         sala1.mostrarAssentos();
 
         // Reservando alguns assentos
