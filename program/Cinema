@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Scanner;
 public class Cinema {
 	public static void main(String[] args) {
-		
+	System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
 		Sala sala1 = new Sala(1, 160);
 
         // Criando um scanner para obter entrada do usuário
