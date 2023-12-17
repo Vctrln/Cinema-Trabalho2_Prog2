@@ -9,6 +9,7 @@ public class Cinema {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
+	int x = sc.nextInt();
 		Sala sala1 = new Sala(1, 160);
 
         // Mostrando os assentos disponíveis antes da reserva
