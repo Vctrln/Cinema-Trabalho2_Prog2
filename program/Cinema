@@ -7,11 +7,9 @@ import java.util.Date;
 import java.util.Scanner;
 public class Cinema {
 	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
 	System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
 		Sala sala1 = new Sala(1, 160);
-
-        // Criando um scanner para obter entrada do usuário
-        Scanner scanner = new Scanner(System.in);
 
         // Mostrando os assentos disponíveis antes da reserva
         System.out.println("Antes da Reserva:");
@@ -19,14 +17,14 @@ public class Cinema {
 
         // Reservando alguns assentos
         System.out.println("\nReservar Assentos:");
-        sala1.reservarAssentos(scanner);
+        sala1.reservarAssentos(sc);
 
         // Mostrando os assentos após a reserva
         System.out.println("\nDepois da Reserva:");
         sala1.mostrarAssentos();
 
         // Fechando o scanner
-        scanner.close();
+        sc.close();
 	    IngressoService ingressoService = new IngressoServiceImpl();
 
         Sessao sessao = new Sessao(ingressoService);
