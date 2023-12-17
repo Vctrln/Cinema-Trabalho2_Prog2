@@ -40,7 +40,7 @@ public class Sala {
     }
 
     public void reservarAssentos(Scanner scanner) {
-        System.out.println("Escolha seus assentos (por exemplo, A1, B2): ");
+        System.out.println("Escolha seus assentos (por exemplo, A1, B2): "); scanner.nextLine();
         String escolhaAssentos = scanner.nextLine();
 
         String[] assentosEscolhidos = escolhaAssentos.split(", ");
