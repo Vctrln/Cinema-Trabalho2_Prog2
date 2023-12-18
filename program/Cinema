@@ -5,12 +5,20 @@ import entities.Sessao;
 import entities.Ingresso;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 public class Cinema {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
-	int x = sc.nextInt();
-	switch(x) {
+		Map<String, Filme> filmes = new HashMap<>();
+
+        filmes.put("Filme1", new Filme("Filme1", Arrays.asList("14:00", "18:30"), "Ação", "2h30min", "PG-13", ""));
+        filmes.put("Filme2", new Filme("Filme2", Arrays.asList("12:00", "16:45"), "Comédia", "1h45min", "PG", ""));
+        filmes.put("Filme3", new Filme("Filme3", Arrays.asList("10:30", "15:15"), "Drama", "2h15min", "R", ""));
+		System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
+		int x = sc.nextInt();
+		switch(x) {
 		case 1:
 		Sala sala1 = new Sala(1, 160);
 
@@ -18,12 +26,13 @@ public class Cinema {
         sala1.mostrarAssentos();
 
         // Reservando alguns assentos
-        System.out.println("\nReservar Assentos:");
+        System.out.println("\nReservar Assentos:");	
         sala1.reservarAssentos(sc);
 
         // Mostrando os assentos após a reserva
         System.out.println("\nDepois da Reserva:");
         sala1.mostrarAssentos();
+
 
 	    IngressoService ingressoService = new IngressoServiceImpl();
 
@@ -57,7 +66,19 @@ public class Cinema {
         };
 
         sessao.venderIngresso(ingresso);
-	}
-	  sc.close();
+        break;
+		case 2:
+			for (String nomeFilme : filmes.keySet()) {
+	            System.out.println(nomeFilme);
+	        }
+			System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
+			String y = sc.nextLine();
+		        Filme filme1 = filmes.get(y);
+		        if (filme1 != null) {
+		            filme1.imprimirInformacoes();
+		        }
+		}
+		
+		sc.close();
     }
 }
