@@ -25,8 +25,6 @@ public class Cinema {
         System.out.println("\nDepois da Reserva:");
         sala1.mostrarAssentos();
 
-        // Fechando o scanner
-        sc.close();
 	    IngressoService ingressoService = new IngressoServiceImpl();
 
         Sessao sessao = new Sessao(ingressoService);
@@ -60,5 +58,6 @@ public class Cinema {
 
         sessao.venderIngresso(ingresso);
 	}
+	  sc.close();
     }
 }
