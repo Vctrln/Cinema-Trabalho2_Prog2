@@ -5,16 +5,30 @@ import java.util.ArrayList;
 
 public class Filme {
 	private String titulo;
-	private Date duracao;
+	private List<String> horarios;
+	private String genero;
+	private String duracao;
+	private String classificacao;
 	private String sinopse;
 	private List<Filme> filmes;
 	
-	public Filme(String titulo, Date duracao, String sinopse) {
+	public Filme(String titulo, List<String> horarios, String genero, String duracao, String classificacao, String sinopse) {
 		super();
 		this.titulo = titulo;
+		this.horarios = horarios;
+		this.genero = genero;
 		this.duracao = duracao;
+		this.classificacao = classificacao;
 		this.sinopse = sinopse;
 		this.filmes = new ArrayList<>();
+	}
+
+	public List<String> getHorarios() {
+		return horarios;
+	}
+
+	public void setHorarios(List<String> horarios) {
+		this.horarios = horarios;
 	}
 
 	public String getTitulo() {
@@ -25,12 +39,29 @@ public class Filme {
 		this.titulo = titulo;
 	}
 
-	public Date getDuracao() {
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getDuracao() {
 		return duracao;
 	}
 
-	public void setDuracao(Date duracao) {
+	public void setDuracao(String duracao) {
 		this.duracao = duracao;
+	}
+	
+
+	public String getClassificacao() {
+		return classificacao;
+	}
+
+	public void setClassificacao(String classificacao) {
+		this.classificacao = classificacao;
 	}
 
 	public String getSinopse() {
@@ -48,6 +79,14 @@ public class Filme {
 	public void setFilmes(List<Filme> filmes) {
 		this.filmes = filmes;
 	}
-	
+	public void imprimirInformacoes() {
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Horários: " + horarios);
+        System.out.println("Gênero: " + genero);
+        System.out.println("Duração: " + duracao);
+        System.out.println("Classificação Indicativa: " + classificacao);
+        System.out.println("Sinopse: " + sinopse);
+        System.out.println();
+    }
 
 }
