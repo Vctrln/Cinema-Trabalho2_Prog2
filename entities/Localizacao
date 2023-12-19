@@ -1,28 +1,16 @@
 package entities;
 
 class Localizacao {
-	private String estado;
 	private String cidade;
 	private	String bairro;
 	private String endereco;
 	
 	
-	public Localizacao(String estado, String cidade, String bairro, String endereco) {
-		this.estado = estado;
+	public Localizacao(String cidade, String bairro, String endereco) {
 		this.cidade = cidade;
 		this.bairro = bairro;
 		this.endereco = endereco;
 	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
 
 	public String getCidade() {
 		return cidade;
