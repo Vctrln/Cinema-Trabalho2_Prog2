@@ -3,7 +3,7 @@ package entities;
 class Shopping extends Localizacao {
 	private String nome;
 
-	public Shopping(String estado, String cidade, String bairro, String endereco, String nome) {
+	public Shopping(String nome, String endereco, String bairro, String cidade, String estado) {
 		super(estado, cidade, bairro, endereco);
 		this.nome = nome;
 	}
