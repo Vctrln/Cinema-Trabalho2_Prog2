@@ -14,9 +14,26 @@ public class Cinema {
 	Shopping sp = new Shopping("Shopping Polis", "Sawano", "Ponderado", "Suna");
 		Map<String, Filme> filmes = new HashMap<>();
 
-        filmes.put("Filme1", new Filme("Filme1", Arrays.asList("14:00", "18:30"), "Ação", "2h30min", "PG-13", ""));
-        filmes.put("Filme2", new Filme("Filme2", Arrays.asList("12:00", "16:45"), "Comédia", "1h45min", "PG", ""));
-        filmes.put("Filme3", new Filme("Filme3", Arrays.asList("10:30", "15:15"), "Drama", "2h15min", "R", ""));
+        filmes.put("O Rei Leão", new Filme("O Rei Leão", Arrays.asList("14:00", "18:30"), "Musical/Infantil/Animação", "1h29min", "10+", ""));
+        filmes.put("Os Caça-Fantasmas", new Filme("Os Caça-Fantasmas", Arrays.asList("12:00", "16:45"), "Fantasia", "1h47min", "10+", ""));
+        filmes.put("Titanic", new Filme("Titanic", Arrays.asList("10:30", "15:15"), "Épico/Romance/Drama", "3h15min", "12+", ""));
+        filmes.put("Minha Mãe É Uma Peça", new Filme("Minha Mãe É Uma Peça", Arrays.asList("9:45", "15:25"), "Comédia", "1h25min", "12+", ""));
+        filmes.put("Toy Story", new Filme("Toy Story", Arrays.asList("08:15", "12:30"), "Comédia/Animação/Aventura", "1h21min", "Livre", ""));
+        filmes.put("WALL-E", new Filme("WALL-E", Arrays.asList("10:15", "15:30"), "Comédia/Animação/Ficção Científica", "1h38min", "Livre", ""));
+        filmes.put("Shrek", new Filme("Shrek", Arrays.asList("10:15", "14:30"), "Comédia/Animação/Fantasia/Aventura", "1h30min", "Livre", ""));
+        filmes.put("O Auto da Compadecida", new Filme("O Auto da Compadecida", Arrays.asList("11:59", "18:22"), "Comédia/Aventura", "1h35min", "12+", ""));
+        filmes.put("Intocáveis", new Filme("Intocáveis", Arrays.asList("09:12", "16:47"), "Comédia/Drama", "1h52min", "12+", ""));
+        filmes.put("Klaus", new Filme("Klaus", Arrays.asList("08:12", "14:57"), "Animação", "1h36min", "Livre", ""));
+        filmes.put("Guardiões da Galáxia", new Filme("Guardiões da Galáxia", Arrays.asList("07:22", "18:03"), "Ação/Ficção Científica/Comédia", "2h01min", "14+", ""));
+        filmes.put("Pantera Negra", new Filme("Pantera Negra", Arrays.asList("10:45", "19:32"), "Ação/Aventura/Ficção científica", "2h15min", "14+", ""));
+        filmes.put("Zootopia", new Filme("Zootopia", Arrays.asList("11:00", "20:30"), "Animação/Aventura", "1h48min", "Livre", ""));
+        filmes.put("Commo Se Fosse a Primeira Vez", new Filme("Commo Se Fosse a Primeira Vez", Arrays.asList("14:00", "18:00"), "Comédia/Romance", "1h39min", "12+", ""));
+        filmes.put("A Fantástica Fábrica de Chocolate", new Filme("A Fantástica Fábrica de Chocolate", Arrays.asList("07:00", "23:00"), "Fantasia/Aventura", "1h55min", "Livre", ""));
+        filmes.put("As Branquelas", new Filme("As Branquelas", Arrays.asList("10:15", "18:45"), "Comédia", "1h49min", "12+", ""));
+        filmes.put("Os Incríveis", new Filme("Os Incríveis", Arrays.asList("11:00", "21:00"), "Ação/Animação/Aventura", "1h55min", "Livre", ""));
+        filmes.put("Ratatouille", new Filme("Ratatouille", Arrays.asList("09:00", "19:00"), "Animação", "1h50min", "Livre", ""));
+        filmes.put("Uma Noite no Museu", new Filme("Uma Noite no Museu", Arrays.asList("13:00", "22:00"), "Comédia/Aventura/Fantasia", "1h48min", "Livre", ""));
+        filmes.put("Matilda", new Filme("Matilda", Arrays.asList("09:00", "19:00"), "Comédia/Fantasia", "1h38min", "10+", ""));
 		System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
 		int x = sc.nextInt();
 		switch(x) {
