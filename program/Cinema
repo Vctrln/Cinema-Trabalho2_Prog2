@@ -69,11 +69,12 @@ public class Cinema {
         sessao.venderIngresso(ingresso);
         break;
 		case 2:
-			for (String nomeFilme : filmes.keySet()) {
-	            System.out.println(nomeFilme);
+		   System.out.println("\nFilmes:\n");
+		   for (String nomeFilme : filmes.keySet()) {
+	             System.out.println(nomeFilme);
 	        }
-			System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
-			String y = sc.nextLine();
+		   System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
+		   String y = sc.nextLine();
 		        Filme filme1 = filmes.get(y);
 		        if (filme1 != null) {
 		            filme1.imprimirInformacoes();
