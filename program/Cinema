@@ -11,6 +11,7 @@ import java.util.Map;
 public class Cinema {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
+	Shopping sp = new Shopping("Shopping Polis", "Sawano", "Ponderado", "Suna");
 		Map<String, Filme> filmes = new HashMap<>();
 
         filmes.put("Filme1", new Filme("Filme1", Arrays.asList("14:00", "18:30"), "Ação", "2h30min", "PG-13", ""));
