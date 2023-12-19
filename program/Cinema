@@ -76,6 +76,7 @@ public class Cinema {
 		        Filme filme1 = filmes.get(y);
 		        if (filme1 != null) {
 		            filme1.imprimirInformacoes();
+	        break;
 		        }
 		}
 		
