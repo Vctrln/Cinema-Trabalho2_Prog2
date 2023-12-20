@@ -1,6 +1,6 @@
 package entities;
 
-class Localizacao {
+public class Localizacao {
 	private String cidade;
 	private	String bairro;
 	private String endereco;
