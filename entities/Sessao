@@ -1,10 +1,8 @@
 package entities;
 
 import java.util.Date;
-import services.IngressoService;
 
 public class Sessao {
-	private IngressoService ingressoService;
 	
 	private String filme;
 	private Date dataHora;
@@ -13,10 +11,6 @@ public class Sessao {
 	
 	public Sessao() {
 
-	}
-
-	public Sessao(IngressoService ingressoService) {
-		this.ingressoService = ingressoService;
 	}
 
 	public String getFilme() {
@@ -49,10 +43,6 @@ public class Sessao {
 
 	public void setLugar(String lugar) {
 		this.lugar = lugar;
-	}
-	
-	public void venderIngresso(Ingresso ingresso) {
-		ingressoService.venderIngresso(ingresso);
 	}
 	
 	
