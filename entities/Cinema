@@ -1,0 +1,69 @@
+package entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cinema {
+	private String nome;
+	private Shopping shopping;
+	private List<Sessao> sessoes = new ArrayList<>();
+	private List<Sala> salas = new ArrayList<>();
+	
+	public Cinema(String nome, Shopping shopping) {
+	
+		this.nome = nome;
+		this.shopping = shopping;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Shopping getShopping() {
+		return shopping;
+	}
+
+	public void setShopping(Shopping shopping) {
+		this.shopping = shopping;
+	}
+
+	public List<Sessao> getSessões() {
+		return sessoes;
+	}
+
+	public void setSessões(List<Sessao> sessoes) {
+		this.sessoes = sessoes;
+	}
+
+	public List<Sala> getSalas() {
+		return salas;
+	}
+
+	public void setSalas(List<Sala> salas) {
+		this.salas = salas;
+	}
+	
+	public void addSessao(Sessao s) {
+		sessoes.add(s);
+	}
+		
+	public void removeSessao(Sessao s) {
+		sessoes.remove(s);	
+	}
+	
+	public void addSala(Sala sa) {
+		salas.add(sa);
+	}
+		
+	public void removeSala(Sala sa) {
+		salas.remove(sa);	
+	}
+	
+	
+
+
+}
