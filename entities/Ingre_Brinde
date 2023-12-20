@@ -1,1 +1,22 @@
+package entities;
+
+public class Ingre_Brinde extends Ingresso {
+	private TipodeBrinde tipodebrinde;
+
+	public Ingre_Brinde(Sessao sessao, int lugar, TipodeBrinde tipodebrinde) {
+		super(sessao, lugar);
+		this.tipodebrinde = tipodebrinde;
+	}
+
+	public TipodeBrinde getTipodebrinde() {
+		return tipodebrinde;
+	}
+
+	public void setTipodebrinde(TipodeBrinde tipodebrinde) {
+		this.tipodebrinde = tipodebrinde;
+	}
+	
+	
+
+}
 
