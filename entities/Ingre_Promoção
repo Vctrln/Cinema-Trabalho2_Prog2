@@ -1,1 +1,23 @@
+package entities;
+
+public class  Ingre_Promoção extends Ingresso {
+	private TipoPromocao tipopromocão;
+
+	public Ingre_Promoção(Sessao sessao, int lugar, TipoPromocao tipopromocão) {
+		super(sessao, lugar);
+		this.tipopromocão = tipopromocão;
+	}
+
+	public TipoPromocao getTipopromocão() {
+		return tipopromocão;
+	}
+
+	public void setTipopromocão(TipoPromocao tipopromocão) {
+		this.tipopromocão = tipopromocão;
+	}
+	
+	
+
+
+}
 
