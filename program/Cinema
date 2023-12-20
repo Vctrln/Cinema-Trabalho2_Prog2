@@ -8,6 +8,11 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import entities.Sala;
+import entities.Filme;
+import entities.Shopping;
+
 public class Cinema {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
