@@ -1,24 +1,17 @@
 package entities;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
-public class Sessao {
-	
-	private String filme;
+public class Sessao{
 	private Date dataHora;
-	private int sala;
-	private String lugar;
+	private Filme filme;
+	private Sala sala;
 	
-	public Sessao() {
-
-	}
-
-	public String getFilme() {
-		return filme;
-	}
-
-	public void setFilme(String filme) {
+	public Sessao(Date dataHora, Filme filme, Sala sala) {
+		this.dataHora = dataHora;
 		this.filme = filme;
+		this.sala = sala;
 	}
 
 	public Date getDataHora() {
@@ -29,21 +22,22 @@ public class Sessao {
 		this.dataHora = dataHora;
 	}
 
-	public int getSala() {
+	public Filme getFilme() {
+		return filme;
+	}
+
+	public void setFilme(Filme filme) {
+		this.filme = filme;
+	}
+
+	public Sala getSala() {
 		return sala;
 	}
 
-	public void setSala(int sala) {
+	public void setSala(Sala sala) {
 		this.sala = sala;
 	}
-
-	public String getLugar() {
-		return lugar;
-	}
-
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
 	
 	
-}
+	
+	}
