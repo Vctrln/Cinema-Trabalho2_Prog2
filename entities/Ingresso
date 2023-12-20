@@ -1,11 +1,31 @@
 package entities;
-import java.util.Date;
 
-public interface Ingresso {
-	String getFilme();
-	Date getDataHora();
-    Sessao getSessao();
-    int getLugar();
-    double getValor();
-    
-    }
+public class Ingresso {
+	private Sessao sessao;
+	private int lugar;
+	
+	public Ingresso(Sessao sessao, int lugar) {
+		super();
+		this.sessao = sessao;
+		this.lugar = lugar;
+	}
+
+	public Sessao getSessao() {
+		return sessao;
+	}
+
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+
+	public int getLugar() {
+		return lugar;
+	}
+
+	public void setLugar(int lugar) {
+		this.lugar = lugar;
+	}
+	
+	
+
+}
