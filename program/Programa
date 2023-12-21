@@ -1,77 +1,217 @@
 package program;
-import entities.Shopping;
-import entities.Filme;
-import entities.Localizacao;
-import java.util.Arrays;
+
+import entities.*;
+
+import java.util.InputMismatchException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Programa {
-	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	
-		Localizacao lc = new Localizacao("BR-230", "Nova Marabá", "Marabá");
-		Shopping sp = new Shopping("Pátio Marabá", lc);
-	
-    
-		Map<String, Filme> filmes = new HashMap<>();
+    private static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        filmes.put("O Rei Leão", new Filme("O Rei Leão", "Musical/Infantil/Animação", "1h29min", "10+", ""));
-        filmes.put("Os Caça-Fantasmas", new Filme("Os Caça-Fantasmas", "Fantasia", "1h47min", "10+", ""));
-        filmes.put("Titanic", new Filme("Titanic", "Épico/Romance/Drama", "3h15min", "12+", ""));
-        filmes.put("Minha Mãe É Uma Peça", new Filme("Minha Mãe É Uma Peça", "Comédia", "1h25min", "12+", ""));
-        filmes.put("Toy Story", new Filme("Toy Story", "Comédia/Animação/Aventura", "1h21min", "Livre", ""));
-        filmes.put("WALL-E", new Filme("WALL-E", "Comédia/Animação/Ficção Científica", "1h38min", "Livre", ""));
-        filmes.put("Shrek", new Filme("Shrek", "Comédia/Animação/Fantasia/Aventura", "1h30min", "Livre", ""));
-        filmes.put("O Auto da Compadecida", new Filme("O Auto da Compadecida", "Comédia/Aventura", "1h35min", "12+", ""));
-        filmes.put("Intocáveis", new Filme("Intocáveis", "Comédia/Drama", "1h52min", "12+", ""));
-        filmes.put("Klaus", new Filme("Klaus", "Animação", "1h36min", "Livre", ""));
-        filmes.put("Guardiões da Galáxia", new Filme("Guardiões da Galáxia", "Ação/Ficção Científica/Comédia", "2h01min", "14+", ""));
-        filmes.put("Pantera Negra", new Filme("Pantera Negra", "Ação/Aventura/Ficção científica", "2h15min", "14+", ""));
-        filmes.put("Zootopia", new Filme("Zootopia", "Animação/Aventura", "1h48min", "Livre", ""));
-        filmes.put("Commo Se Fosse a Primeira Vez", new Filme("Commo Se Fosse a Primeira Vez", "Comédia/Romance", "1h39min", "12+", ""));
-        filmes.put("A Fantástica Fábrica de Chocolate", new Filme("A Fantástica Fábrica de Chocolate", "Fantasia/Aventura", "1h55min", "Livre", ""));
-        filmes.put("As Branquelas", new Filme("As Branquelas", "Comédia", "1h49min", "12+", ""));
-        filmes.put("Os Incríveis", new Filme("Os Incríveis", "Ação/Animação/Aventura", "1h55min", "Livre", ""));
-        filmes.put("Ratatouille", new Filme("Ratatouille", "Animação", "1h50min", "Livre", ""));
-        filmes.put("Uma Noite no Museu", new Filme("Uma Noite no Museu", "Comédia/Aventura/Fantasia", "1h48min", "Livre", ""));
-        filmes.put("Matilda", new Filme("Matilda", "Comédia/Fantasia", "1h38min", "10+", ""));	  
+        Localizacao local = new Localizacao("Marabá", "Nova Marabá", "BR-230, 68507");
+        Shopping shopping = new Shopping("Pátio", local);
 
-	
-		System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
-		int x = sc.nextInt();
-		switch(x) {
-		case 1:
-		Sala sala1 = new Sala(1, 160);
+        Map<String, Filme> filmes = new HashMap<>();
 
-        // Mostrando os assentos disponíveis antes da reserva
-        sala1.mostrarAssentos();
+        Filme filmeA = new Filme("O Rei Leão", "Musical/Infantil", "1h 27m", "10+", "Este desenho animado da Disney mostra as aventuras de um...");
+        Filme filmeB = new Filme("Como Se Fosse a Primeira Vez", "Comédia/Romance", "1h 39m", "12+", "Henry Roth é um veterinário paquerador que vive no Havaí e famoso pelo grande número de turistas que conquista...");
+        Filme filmeC = new Filme("Toy Story", "Animação", "1h 49m", "12+", "O aniversário do garoto Andy está chegando e seus brinquedos ficam nervosos, temendo que ele ganhe novos brinquedos que possam substituí-los...");
+        Filme filmeD = new Filme("Shrek", "Animação/Comédia", "1h 30m", "Livre", "Shrek, um ogro solitário, vê sua vida tranquila virar de cabeça para baixo quando uma série de personagens de contos de fadas invade seu pântano...");
+        Filme filmeE = new Filme("O Auto da Compadecida", "Comédia", "1h 44m", "14+", "As aventuras dos nordestinos João Grilo e Chicó, que são confundidos com cangaceiros e acabam enfrentando os temíveis bandidos da região...");
+        Filme filmeF = new Filme("Intocáveis", "Comédia/Drama", "1h 52m", "16+", "A história real de uma amizade incomum entre um aristocrata tetraplégico e seu cuidador, um jovem de origem humilde...");
+        Filme filmeG = new Filme("Guardiões da Galáxia", "Ação/Aventura", "2h 1m", "14+", "Um grupo de desajustados se une para proteger uma poderosa esfera de um vilão intergaláctico...");
+        Filme filmeH = new Filme("Pantera Negra", "Ação/Aventura", "2h 14m", "12+", "Após a morte de seu pai, o príncipe T'Challa retorna à nação africana de Wakanda para assumir o trono e proteger seu povo como o Pantera Negra...");
+        Filme filmeI = new Filme("A Fantástica Fábrica de Chocolate", "Aventura/Comédia", "1h 55m", "Livre", "Charlie Bucket ganha um passe para visitar a lendária fábrica de chocolate de Willy Wonka...");
+        Filme filmeJ = new Filme("As Branquelas", "Comédia", "1h 49m", "14+", "Dois agentes do FBI se disfarçam como socialites para evitar um sequestro, mas as coisas não saem como planejado...");
+        Filme filmeK = new Filme("Os Incríveis", "Animação/Ação", "1h 55m", "Livre", "Uma família de super-heróis aposentados é chamada de volta à ação para salvar o mundo...");
+        Filme filmeL = new Filme("Matilda", "Comédia/Fantasia", "1h 42m", "Livre", "Matilda, uma criança prodígio com poderes telecinéticos, enfrenta a tirania de sua família e da diretora da escola...");
 
-        // Reservando alguns assentos
-        System.out.println("\nReservar Assentos:");	
-        sala1.reservarAssentos(sc);
+        filmes.put("O Rei Leão", filmeA);
+        filmes.put("Como Se Fosse a Primeira Vez", filmeB);
+        filmes.put("Toy Story", filmeC);
+        filmes.put("Shrek", filmeD);
+        filmes.put("O Auto da Compadecida", filmeE);
+        filmes.put("Intocáveis", filmeF);
+        filmes.put("Guardiões da Galáxia", filmeG);
+        filmes.put("Pantera Negra", filmeH);
+        filmes.put("A Fantástica Fábrica de Chocolate", filmeI);
+        filmes.put("As Branquelas", filmeJ);
+        filmes.put("Os Incríveis", filmeK);
+        filmes.put("Matilda", filmeL);
+        
 
-        // Mostrando os assentos após a reserva
-        System.out.println("\nDepois da Reserva:");
-        sala1.mostrarAssentos();
 
-        break;
-		case 2:
-		   System.out.println("\nFilmes:\n");
-		   for (String nomeFilme : filmes.keySet()) {
-	             System.out.println(nomeFilme);
-	        }
-		   System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
-		   String y = sc.nextLine();
-		        Filme filme1 = filmes.get(y);
-		        if (filme1 != null) {
-		            filme1.imprimirInformacoes();
-	        break;
-		        }
-		}
-		
-		sc.close();
+        // Criando instâncias de Sala
+        Sala sala1 = new Sala(1, 160);
+        Sala sala2 = new Sala(2, 120);
+
+        //Criando a lista de filmes para estreia
+        List<Filme> filmesEstreia = Arrays.asList(filmeG, filmeH, filmeI, filmeJ, filmeK, filmeL);
+
+        // Adicionando os filmes à lista geral de filmes
+        for (Filme filme : filmesEstreia) {
+            filmes.put(filme.getTitulo(), filme);
+        }
+        
+        // Criando instâncias de Sessao
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            Date horario1 = sdf.parse("20/12/2023 15:00");
+            Date horario2 = sdf.parse("20/12/2023 18:30");
+            Date horario3 = sdf.parse("20/12/2023 21:00");
+            Date horario4 = sdf.parse("21/12/2023 14:30");
+            Date horario5 = sdf.parse("21/12/2023 17:45");
+
+            Sessao sessao1 = new Sessao(filmeA, horario1, TipoSessao.SESSÃO2D, sala1);
+            Sessao sessao2 = new Sessao(filmeB, horario1, TipoSessao.SESSÃO3D, sala2);
+            Sessao sessao3 = new Sessao(filmeC, horario2, TipoSessao.SESSÃO2D, sala1);
+            Sessao sessao4 = new Sessao(filmeD, horario2, TipoSessao.SESSÃO2D, sala2);
+            Sessao sessao5 = new Sessao(filmeE, horario3, TipoSessao.SESSÃO3D, sala1);
+            Sessao sessao6 = new Sessao(filmeF, horario3, TipoSessao.SESSÃO2D, sala2);
+            
+            //Criando as instancias da sessão da estreia
+            Date dataEstreiaFilmeG = new SimpleDateFormat("dd/MM/yyyy").parse("15/01/2024");
+            Date dataEstreiaFilmeH = new SimpleDateFormat("dd/MM/yyyy").parse("18/01/2024");
+            Date dataEstreiaFilmeI = new SimpleDateFormat("dd/MM/yyyy").parse("22/01/2024");
+            Date dataEstreiaFilmeJ = new SimpleDateFormat("dd/MM/yyyy").parse("25/01/2024");
+            Date dataEstreiaFilmeK = new SimpleDateFormat("dd/MM/yyyy").parse("29/01/2024");
+            Date dataEstreiaFilmeL = new SimpleDateFormat("dd/MM/yyyy").parse("02/02/2024");
+            
+            Sessao sessao7 = new Sessao(filmeG, dataEstreiaFilmeG, TipoSessao.SESSÃO3D, sala1);
+            Sessao sessao8 = new Sessao(filmeH, dataEstreiaFilmeH, TipoSessao.SESSÃO2D, sala2);
+            Sessao sessao9 = new Sessao(filmeI, dataEstreiaFilmeI, TipoSessao.SESSÃO2D, sala1);
+            Sessao sessao10 = new Sessao(filmeJ, dataEstreiaFilmeJ, TipoSessao.SESSÃO3D, sala2);
+            Sessao sessao11 = new Sessao(filmeK, dataEstreiaFilmeK, TipoSessao.SESSÃO2D, sala1);
+            Sessao sessao12 = new Sessao(filmeL, dataEstreiaFilmeL, TipoSessao.SESSÃO3D, sala2);
+        
+        
+            // Exibindo detalhes de uma sessão
+            sessao1.exibirDetalhesSessao();
+            exibirOpcoesUsuario(filmes);
+           
+            
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } finally {
+        	sc.close();
+        }
+        }
+    	
+            // Menu inicial 
+            private static void exibirOpcoesUsuario(Map<String, Filme> filmes) {
+                System.out.println("\nO que deseja fazer?");
+                System.out.println("1. Comprar ingresso");
+                System.out.println("2. Ver catálogo de filmes");
+                System.out.println("3. Espiar pré-estreia");
+
+                try {
+                    int escolha = lerInteiroDoUsuario("Escolha uma opção: ");
+                    switch (escolha) {
+                        case 1:
+                            comprarIngresso(filmes);
+                            break;
+                        case 2:
+                            exibirCatalogoFilmes(filmes);
+                            break;
+                        case 3:
+                            espiarPreEstreia(filmes);
+                            break;
+                        default:
+                            System.out.println("Escolha inválida.");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Por favor, insira um número válido.");
+                }
+            }
+        
+        //Exibir catálogo de filmes
+        private static void exibirCatalogoFilmes(Map<String, Filme> filmes) {
+            System.out.println("\nCatálogo de Filmes:\n");
+            for (String nomeFilme : filmes.keySet()) {
+                System.out.println(nomeFilme);
+            }
+        }
+
+        //Exibir pré-estréia
+        private static void espiarPreEstreia(Map<String, Filme> filmes) {
+            System.out.println("\nFilmes que ainda vão estrear:\n");
+            for (Filme filme : filmes.values()) {
+                if (filme.getDataEstreia() != null) {
+                    System.out.println(filme.getTitulo() + " - Estreia em: " + filme.getDataEstreia());
+                }
+            }
+        }
+
+        //Escolher um filme para comprar o ingresso
+        private static void comprarIngresso(Map<String, Filme> filmes) {
+            System.out.println("\nEscolha um filme para comprar ingresso:");
+            exibirCatalogoFilmes(filmes);
+            
+            sc.nextLine(); 
+            String escolhaFilme = sc.nextLine();
+            Filme filmeSelecionado = filmes.get(escolhaFilme);
+            if (filmeSelecionado != null) {
+                System.out.println("\nHorários disponíveis para " + filmeSelecionado.getTitulo() + ":");
+                exibirHorariosDisponiveis(filmeSelecionado);
+                System.out.println("Escolha o horário da sessão:");
+                int escolhaHorario = lerInteiroDoUsuario("Digite o número do horário desejado: ");
+                List<Sessao> sessoesDisponiveis = obterSessoesDisponiveis(filmeSelecionado, escolhaHorario);
+                if (!sessoesDisponiveis.isEmpty()) {
+                    exibirSessoesDisponiveis(sessoesDisponiveis);
+                    int escolhaSessao = lerInteiroDoUsuario("Escolha o número da sessão desejada: ");
+                    System.out.println("Ingresso comprado com sucesso para a sessão " + escolhaSessao + "!");
+                } else {
+                    System.out.println("Nenhuma sessão disponível para o horário escolhido.");
+                }
+            } else {
+                System.out.println("Filme não encontrado.");
+            }
+        }
+
+        //Exibir os horários disponiveis
+        private static void exibirHorariosDisponiveis(Filme filme) {
+            System.out.println("1. 15:00");
+            System.out.println("2. 18:30");
+            System.out.println("3. 21:00");
+        }
+
+        //Array que obtem sessões disponiveis
+        private static List<Sessao> obterSessoesDisponiveis(Filme filme, int escolhaHorario) {
+            return Arrays.asList(
+                    new Sessao(filme, new Date(), TipoSessao.SESSÃO2D, new Sala(1, 100)),
+                    new Sessao(filme, new Date(), TipoSessao.SESSÃO3D, new Sala(2, 120)),
+                    new Sessao(filme, new Date(), TipoSessao.SESSÃO2D, new Sala(3, 80))
+            );
+        }
+
+        //Exibe sessões disponiveis
+        private static void exibirSessoesDisponiveis(List<Sessao> sessoes) {
+            System.out.println("\nSessões disponíveis:");
+            for (int i = 0; i < sessoes.size(); i++) {
+                System.out.println((i + 1) + ". " + sessoes.get(i).getHorario());
+            }
+        }
+
+        
+        private static int lerInteiroDoUsuario(String mensagem) {
+            System.out.print(mensagem);
+            return sc.nextInt();    
+            
+        }
+        private static void mostrarAssentos(Sala sala) {
+            System.out.println("\nAssentos Disponíveis:");
+            sala.mostrarAssentos();
+        }
+
+        private static void reservarAssentos(Sala sala, Scanner sc) {
+            sala.reservarAssentos(sc);
+        }
     }
-}
