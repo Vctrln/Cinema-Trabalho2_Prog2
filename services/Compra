@@ -1,1 +1,58 @@
+package services;
+import entities.Sala;
+import entities.Filme;
+import entities.TipoPromocao;
 
+public class Compra {
+    private Pagamento metodoPagamento;
+
+    public Compra(Pagamento metodoPagamento) {
+        this.metodoPagamento = metodoPagamento;
+    }
+
+    public void exibirFilme(Filme filme) {
+        System.out.println("Filme em exibição: " + filme.getTitulo());
+    }
+
+    public void mostrarAssentos(Sala sala) {
+        sala.mostrarAssentos();
+    }
+
+    public boolean comprarIngresso(Sala sala, int quantidade, double valorIngresso, TipoPromocao promocao) {
+        try {
+
+        	if (quantidade <= 0) {
+                throw new IllegalArgumentException("Quantidade de ingressos deve ser maior que zero.");
+            }
+
+            if (quantidade > sala.getCapacidade()) {
+                throw new IllegalArgumentException("Quantidade de ingressos solicitada é maior que a capacidade da sala.");
+            }
+
+            if (valorIngresso <= 0) {
+                throw new IllegalArgumentException("O valor do ingresso deve ser maior que zero.");
+            }
+
+            double valorTotal = quantidade * valorIngresso;
+
+            switch (promocao) {
+                case MEIA:
+                case QUINTAS:
+                    valorTotal /= 2; 
+                    break;
+                default:
+            }
+
+            System.out.println("Compra realizada com sucesso para " + quantidade + " ingresso(s).");
+            System.out.println("Total a pagar: R$ " + valorTotal);
+            metodoPagamento.realizarPagamento(valorTotal);
+            return true;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println("Erro inesperado ao processar a compra.");
+            return false;
+        }
+    }
+}
