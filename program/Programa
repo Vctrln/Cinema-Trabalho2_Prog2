@@ -7,7 +7,8 @@ public class Programa {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	
-	Localizacao Local = new Localizacao("Marabá", "Nova Marabá", "BR-230, 68507");
+		Localizacao lc = new Localizacao("BR-230", "Nova Marabá", "Marabá");
+		Shopping sp = new Shopping("Pátio Marabá", lc);
 	
     Shopping sp = new Shopping("Pátio", Local);
     
