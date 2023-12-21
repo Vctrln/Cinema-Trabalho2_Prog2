@@ -132,18 +132,28 @@ public class Programa {
             }
         
         //Exibir catálogo de filmes
-        private static void exibirCatalogoFilmes(Map<String, Filme> filmes) {
-            System.out.println("\nFilmes:\n");
-			for (String nomeFilme : filmes.keySet()) {
-	            System.out.println(nomeFilme);
-	        }
-			System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
-			String y = sc.nextLine();
-		        Filme filme1 = filmes.get(y);
-		        if (filme1 != null) {
-		            filme1.imprimirInformacoes();
+            private static void exibirCatalogoFilmes(Map<String, Filme> filmes) {
+                System.out.println("\nFilmes:\n");
+
+                for (String nomeFilme : filmes.keySet()) {
+                    Filme filme = filmes.get(nomeFilme);
+                    if (filme.getDataEstreia() == null) {
+                        System.out.println(nomeFilme);
+                    }
+                }
+
+                // Solicitar escolha do filme (pode adaptar conforme necessário)
+                System.out.println("\nQue filme deseja verificar?");
+                Scanner sc = new Scanner(System.in);
+                String escolhaFilme = sc.nextLine();
+
+                Filme filmeSelecionado = filmes.get(escolhaFilme);
+                if (filmeSelecionado != null) {
+                    filmeSelecionado.imprimirInformacoes();
+                } else {
+                    System.out.println("Filme não encontrado.");
+                }
             }
-        }
 
         //Exibir pré-estréia
           private static void espiarPreEstreia(List<Filme> filmesEstreia) {
