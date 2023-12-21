@@ -27,12 +27,12 @@ public class Programa {
         Filme filmeD = new Filme("Shrek", "Animação/Comédia", "1h 30m", "Livre", "Shrek, um ogro solitário, vê sua vida tranquila virar de cabeça para baixo quando uma série de personagens de contos de fadas invade seu pântano...");
         Filme filmeE = new Filme("O Auto da Compadecida", "Comédia", "1h 44m", "14+", "As aventuras dos nordestinos João Grilo e Chicó, que são confundidos com cangaceiros e acabam enfrentando os temíveis bandidos da região...");
         Filme filmeF = new Filme("Intocáveis", "Comédia/Drama", "1h 52m", "16+", "A história real de uma amizade incomum entre um aristocrata tetraplégico e seu cuidador, um jovem de origem humilde...");
-        Filme filmeG = new Filme("Guardiões da Galáxia", "Ação/Aventura", "2h 1m", "14+", "Estreia em: 15/01/2024\nUm grupo de desajustados se une para proteger uma poderosa esfera de um vilão intergaláctico...");
-        Filme filmeH = new Filme("Pantera Negra", "Ação/Aventura", "2h 14m", "12+", "Estreia em: 18/01/2024\nApós a morte de seu pai, o príncipe T'Challa retorna à nação africana de Wakanda para assumir o trono e proteger seu povo como o Pantera Negra...");
-        Filme filmeI = new Filme("A Fantástica Fábrica de Chocolate", "Aventura/Comédia", "1h 55m", "Livre", "Estreia em: 22/01/2024\nCharlie Bucket ganha um passe para visitar a lendária fábrica de chocolate de Willy Wonka...");
-        Filme filmeJ = new Filme("As Branquelas", "Comédia", "1h 49m", "14+", "Estreia em: 25/01/2024\nDois agentes do FBI se disfarçam como socialites para evitar um sequestro, mas as coisas não saem como planejado...");
-        Filme filmeK = new Filme("Os Incríveis", "Animação/Ação", "1h 55m", "Livre", "Estreia em: 29/01/2024\nUma família de super-heróis aposentados é chamada de volta à ação para salvar o mundo...");
-        Filme filmeL = new Filme("Matilda", "Comédia/Fantasia", "1h 42m", "Livre", "Estreia em: 02/02/2024\nMatilda, uma criança prodígio com poderes telecinéticos, enfrenta a tirania de sua família e da diretora da escola...");
+        Filme filmeG = new Filme("Guardiões da Galáxia", "Ação/Aventura", "2h 1m", "14+", "\nEstreia em: 15/01/2024\nUm grupo de desajustados se une para proteger uma poderosa esfera de um vilão intergaláctico...");
+        Filme filmeH = new Filme("Pantera Negra", "Ação/Aventura", "2h 14m", "12+", "\nEstreia em: 18/01/2024\nApós a morte de seu pai, o príncipe T'Challa retorna à nação africana de Wakanda para assumir o trono e proteger seu povo como o Pantera Negra...");
+        Filme filmeI = new Filme("A Fantástica Fábrica de Chocolate", "Aventura/Comédia", "1h 55m", "Livre", "\nEstreia em: 22/01/2024\nCharlie Bucket ganha um passe para visitar a lendária fábrica de chocolate de Willy Wonka...");
+        Filme filmeJ = new Filme("As Branquelas", "Comédia", "1h 49m", "14+", "\nEstreia em: 25/01/2024\nDois agentes do FBI se disfarçam como socialites para evitar um sequestro, mas as coisas não saem como planejado...");
+        Filme filmeK = new Filme("Os Incríveis", "Animação/Ação", "1h 55m", "Livre", "\nEstreia em: 29/01/2024\nUma família de super-heróis aposentados é chamada de volta à ação para salvar o mundo...");
+        Filme filmeL = new Filme("Matilda", "Comédia/Fantasia", "1h 42m", "Livre", "\nEstreia em: 02/02/2024\nMatilda, uma criança prodígio com poderes telecinéticos, enfrenta a tirania de sua família e da diretora da escola...");
 
         filmes.put("O Rei Leão", filmeA);
         filmes.put("Como Se Fosse a Primeira Vez", filmeB);
