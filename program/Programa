@@ -2,6 +2,11 @@ package program;
 import entities.Shopping;
 import entities.Filme;
 import entities.Localizacao;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Programa {
 	public static void main(String[] args) {
@@ -11,11 +16,28 @@ public class Programa {
 		Shopping sp = new Shopping("Pátio Marabá", lc);
 	
     
-    Filme a = new Filme("O Rei Leão", "Musical/Infantil", "1h 27m", "10+", "Este desenho animado da Disney mostra as aventuras de um "
-    	                                              	+ "leão jovem de nome Simba, o herdeiro de seu pai, Mufasa. ");
-	Filme b = new Filme("Como Se Fosse a Primeira Vez", "Comédia/Romance", "1h 39m", "12+", "Henry Roth é um veterinário paquerador que vive no Havaí e famoso pelo grande número de turistas que conquista. "
-			                                            + "Seu novo alvo é Lucy Whitmore, que mora no local e por quem Henry se apaixona perdidamente.");
-	  
+		Map<String, Filme> filmes = new HashMap<>();
+
+        filmes.put("O Rei Leão", new Filme("O Rei Leão", "Musical/Infantil/Animação", "1h29min", "10+", ""));
+        filmes.put("Os Caça-Fantasmas", new Filme("Os Caça-Fantasmas", "Fantasia", "1h47min", "10+", ""));
+        filmes.put("Titanic", new Filme("Titanic", "Épico/Romance/Drama", "3h15min", "12+", ""));
+        filmes.put("Minha Mãe É Uma Peça", new Filme("Minha Mãe É Uma Peça", "Comédia", "1h25min", "12+", ""));
+        filmes.put("Toy Story", new Filme("Toy Story", "Comédia/Animação/Aventura", "1h21min", "Livre", ""));
+        filmes.put("WALL-E", new Filme("WALL-E", "Comédia/Animação/Ficção Científica", "1h38min", "Livre", ""));
+        filmes.put("Shrek", new Filme("Shrek", "Comédia/Animação/Fantasia/Aventura", "1h30min", "Livre", ""));
+        filmes.put("O Auto da Compadecida", new Filme("O Auto da Compadecida", "Comédia/Aventura", "1h35min", "12+", ""));
+        filmes.put("Intocáveis", new Filme("Intocáveis", "Comédia/Drama", "1h52min", "12+", ""));
+        filmes.put("Klaus", new Filme("Klaus", "Animação", "1h36min", "Livre", ""));
+        filmes.put("Guardiões da Galáxia", new Filme("Guardiões da Galáxia", "Ação/Ficção Científica/Comédia", "2h01min", "14+", ""));
+        filmes.put("Pantera Negra", new Filme("Pantera Negra", "Ação/Aventura/Ficção científica", "2h15min", "14+", ""));
+        filmes.put("Zootopia", new Filme("Zootopia", "Animação/Aventura", "1h48min", "Livre", ""));
+        filmes.put("Commo Se Fosse a Primeira Vez", new Filme("Commo Se Fosse a Primeira Vez", "Comédia/Romance", "1h39min", "12+", ""));
+        filmes.put("A Fantástica Fábrica de Chocolate", new Filme("A Fantástica Fábrica de Chocolate", "Fantasia/Aventura", "1h55min", "Livre", ""));
+        filmes.put("As Branquelas", new Filme("As Branquelas", "Comédia", "1h49min", "12+", ""));
+        filmes.put("Os Incríveis", new Filme("Os Incríveis", "Ação/Animação/Aventura", "1h55min", "Livre", ""));
+        filmes.put("Ratatouille", new Filme("Ratatouille", "Animação", "1h50min", "Livre", ""));
+        filmes.put("Uma Noite no Museu", new Filme("Uma Noite no Museu", "Comédia/Aventura/Fantasia", "1h48min", "Livre", ""));
+        filmes.put("Matilda", new Filme("Matilda", "Comédia/Fantasia", "1h38min", "10+", ""));	  
 	
 	
 	
