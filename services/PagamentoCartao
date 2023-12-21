@@ -1,0 +1,8 @@
+package services;
+
+class PagamentoCartao implements Pagamento {
+    @Override
+    public void realizarPagamento(double valor) {
+        System.out.println("Pagamento com cartão no valor de R$ " + valor + " realizado com sucesso.");
+    }
+}
