@@ -60,6 +60,10 @@ public class Sessao {
 	public void setSala(Sala sala) {
 		this.sala = sala;
 	}
+	public void reservarAssentos(int numeroAssento) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	}
