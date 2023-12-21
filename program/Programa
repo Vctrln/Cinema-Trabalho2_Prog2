@@ -57,39 +57,6 @@ public class Programa {
         System.out.println("\nDepois da Reserva:");
         sala1.mostrarAssentos();
 
-
-	    IngressoService ingressoService = new IngressoServiceImpl();
-
-        Sessao sessao = new Sessao(ingressoService);
-
-        Ingresso ingresso = new Ingresso() {
-        	    @Override
-        	    public String getFilme() {
-        	        return "Nome do Filme";
-        	    }
-
-        	    @Override
-        	    public Date getDataHora() {
-        	        return null; 
-        	    }
-
-        	    @Override
-        	    public int getLugar() {
-        	        return 10; 
-        	    }
-
-        	    @Override
-        	    public Sessao getSessao() {
-        	        return new Sessao(new IngressoServiceImpl());
-        	    }
-
-        	    @Override
-        	    public double getValor() {
-        	        return 0.0; 
-        	    }
-        };
-
-        sessao.venderIngresso(ingresso);
         break;
 		case 2:
 		   System.out.println("\nFilmes:\n");
