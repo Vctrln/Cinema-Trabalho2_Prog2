@@ -81,7 +81,7 @@ public class Filme {
         System.out.println("Gênero: " + genero);
         System.out.println("Duração: " + duracao);
         System.out.println("Classificação Indicativa: " + classificacao);
-        System.out.println("Sinopse: " + sinopse);
+        System.out.println("Informação: " + sinopse);
         System.out.println();
     }
 
