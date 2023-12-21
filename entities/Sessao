@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Sessao {
@@ -14,22 +15,35 @@ public class Sessao {
         this.tipoSessao = tipoSessao;
         this.sala = sala;
 	}
+    public void exibirDetalhesSessao() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        System.out.println("Detalhes da Sessão:");
+        System.out.println("Filme: " + filme.getTitulo());
+        System.out.println("Horário: " + sdf.format(horario));
+        System.out.println("Tipo de Sessão: " + tipoSessao);
+        System.out.println("Sala: " + sala.getId());
+    }
+
 
 	public Date getHorario() {
 		return horario;
 	}
 
+
 	public void setHorario(Date horario) {
 		this.horario = horario;
 	}
+
 
 	public TipoSessao getTipoSessao() {
 		return tipoSessao;
 	}
 
+
 	public void setTipoSessao(TipoSessao tipoSessao) {
 		this.tipoSessao = tipoSessao;
 	}
+
 
 	public Filme getFilme() {
 		return filme;
