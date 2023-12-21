@@ -10,6 +10,7 @@ public class Filme {
 	private String classificacao;
 	private String sinopse;
 	private List<Filme> filmes;
+	private Date dataEstreia;
 	
 	public Filme(String titulo, String genero, String duracao, String classificacao, String sinopse) {
 		super();
@@ -69,14 +70,21 @@ public class Filme {
 	public void setFilmes(List<Filme> filmes) {
 		this.filmes = filmes;
 	}
+	
+	public Date getDataEstreia() {
+		return dataEstreia;
+	}
+	
 	public void imprimirInformacoes() {
         System.out.println("Titulo: " + titulo);
-        System.out.println("Horários: " + horarios);
+      //System.out.println("Horários: " + horarios);
         System.out.println("Gênero: " + genero);
         System.out.println("Duração: " + duracao);
         System.out.println("Classificação Indicativa: " + classificacao);
         System.out.println("Sinopse: " + sinopse);
         System.out.println();
     }
+
+}
 
 }
