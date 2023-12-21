@@ -6,7 +6,7 @@ public class Localizacao {
 	private String endereco;
 	
 	
-	public Localizacao(String cidade, String bairro, String endereco) {
+	public Localizacao(String endereco, String bairro, String cidade) {
 		this.cidade = cidade;
 		this.bairro = bairro;
 		this.endereco = endereco;
