@@ -10,7 +10,6 @@ public class Programa {
 		Localizacao lc = new Localizacao("BR-230", "Nova Marabá", "Marabá");
 		Shopping sp = new Shopping("Pátio Marabá", lc);
 	
-    Shopping sp = new Shopping("Pátio", Local);
     
     Filme a = new Filme("O Rei Leão", "Musical/Infantil", "1h 27m", "10+", "Este desenho animado da Disney mostra as aventuras de um "
     	                                              	+ "leão jovem de nome Simba, o herdeiro de seu pai, Mufasa. ");
