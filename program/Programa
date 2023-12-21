@@ -94,7 +94,6 @@ public class Programa {
         
         
             // Exibindo detalhes de uma sessão
-            sessao1.exibirDetalhesSessao();
             exibirOpcoesUsuario(filmes, filmesEstreia);
            
             
