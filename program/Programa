@@ -38,13 +38,7 @@ public class Programa {
         filmes.put("Ratatouille", new Filme("Ratatouille", "Animação", "1h50min", "Livre", ""));
         filmes.put("Uma Noite no Museu", new Filme("Uma Noite no Museu", "Comédia/Aventura/Fantasia", "1h48min", "Livre", ""));
         filmes.put("Matilda", new Filme("Matilda", "Comédia/Fantasia", "1h38min", "10+", ""));	  
-	
-	
-	
-	
-	
-	
-	
+
 	
 		System.out.println("O que deseja fazer?\n\n1.Comprar ingresso\n2.Ver catalogo de filmes\n3.Espiar pré-estreia");
 		int x = sc.nextInt();
