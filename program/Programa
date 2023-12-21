@@ -51,7 +51,7 @@ public class Programa {
 
         // Criando instâncias de Sala
         Sala sala1 = new Sala(1, 160);
-        Sala sala2 = new Sala(2, 120);
+        Sala sala2 = new Sala(2, 160);
 
         //Criando a lista de filmes para estreia
         List<Filme> filmesEstreia = Arrays.asList(filmeG, filmeH, filmeI, filmeJ, filmeK, filmeL);
