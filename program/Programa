@@ -189,9 +189,12 @@ public class Programa {
         //Escolher um filme para comprar o ingresso
         private static void comprarIngresso(Map<String, Filme> filmes) {
             System.out.println("\nEscolha um filme para comprar ingresso:");
-            exibirCatalogoFilmes(filmes);
-            
-            sc.nextLine(); 
+            System.out.println("\nFilmes:\n");
+			for (String nomeFilme : filmes.keySet()) {
+	            System.out.println(nomeFilme);
+	        }
+			System.out.printf("\nFilme Escolhido:");
+            sc.nextLine();
             String escolhaFilme = sc.nextLine();
             Filme filmeSelecionado = filmes.get(escolhaFilme);
             if (filmeSelecionado != null) {
