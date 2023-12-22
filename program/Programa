@@ -5,13 +5,17 @@ import entities.*;
 import java.util.InputMismatchException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Arrays;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
-
 public class Programa {
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
@@ -51,7 +55,7 @@ public class Programa {
 
         // Criando instâncias de Sala
         Sala sala1 = new Sala(1, 160);
-        Sala sala2 = new Sala(2, 160);
+        Sala sala2 = new Sala(1, 160);
 
         //Criando a lista de filmes para estreia
         List<Filme> filmesEstreia = Arrays.asList(filmeG, filmeH, filmeI, filmeJ, filmeK, filmeL);
@@ -100,12 +104,12 @@ public class Programa {
         } catch (ParseException e) {
             e.printStackTrace();
         } finally {
-        	sc.close();
-        }
+        	
+         }
         }
     	
             // Menu inicial 
-            private static void exibirOpcoesUsuario(Map<String, Filme> filmes) {
+            private static void exibirOpcoesUsuario(Map<String, Filme> filmes, List<Filme> filmesEstreia) {
                 System.out.println("\nO que deseja fazer?");
                 System.out.println("1. Comprar ingresso");
                 System.out.println("2. Ver catálogo de filmes");
@@ -134,29 +138,23 @@ public class Programa {
         //Exibir catálogo de filmes
             private static void exibirCatalogoFilmes(Map<String, Filme> filmes) {
                 System.out.println("\nFilmes:\n");
-
                 for (String nomeFilme : filmes.keySet()) {
-                    Filme filme = filmes.get(nomeFilme);
-                    if (filme.getDataEstreia() == null) {
-                        System.out.println(nomeFilme);
-                    }
+                    System.out.println(nomeFilme);
                 }
 
-                // Solicitar escolha do filme (pode adaptar conforme necessário)
                 System.out.println("\nQue filme deseja verificar?");
-                Scanner sc = new Scanner(System.in);
-                String escolhaFilme = sc.nextLine();
+                String escolhaFilme = sc.nextLine();  // Removido o próximo sc.nextLine()
 
-                Filme filmeSelecionado = filmes.get(escolhaFilme);
-                if (filmeSelecionado != null) {
-                    filmeSelecionado.imprimirInformacoes();
+                Filme filme1 = filmes.get(escolhaFilme);
+                if (filme1 != null) {
+                    filme1.imprimirInformacoes();
                 } else {
                     System.out.println("Filme não encontrado.");
                 }
             }
 
         //Exibir pré-estréia
-          private static void espiarPreEstreia(List<Filme> filmesEstreia) {
+        private static void espiarPreEstreia(List<Filme> filmesEstreia) {
             System.out.println("\nFilmes que ainda vão estrear:\n");
 
             for (Filme filme : filmesEstreia) {
@@ -180,6 +178,15 @@ public class Programa {
                 filmeSelecionado.imprimirInformacoes();
             } else {
                 System.out.println("Filme não encontrado.");
+            }
+        }
+
+        private static String formatarData(LocalDate data) {
+            if (data != null) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                return data.format(formatter);
+            } else {
+                return "Não informada";
             }
         }
 
