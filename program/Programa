@@ -137,19 +137,15 @@ public class Programa {
         
         //Exibir catálogo de filmes
             private static void exibirCatalogoFilmes(Map<String, Filme> filmes) {
-                System.out.println("\nFilmes:\n");
-                for (String nomeFilme : filmes.keySet()) {
-                    System.out.println(nomeFilme);
-                }
-
-                System.out.println("\nQue filme deseja verificar?");
-                String escolhaFilme = sc.nextLine();  // Removido o próximo sc.nextLine()
-
-                Filme filme1 = filmes.get(escolhaFilme);
-                if (filme1 != null) {
-                    filme1.imprimirInformacoes();
-                } else {
-                    System.out.println("Filme não encontrado.");
+    			System.out.println("\nFilmes:\n");
+    			for (String nomeFilme : filmes.keySet()) {
+    	            System.out.println(nomeFilme);
+    	        }
+    			System.out.println("\nQue filme deseja verificar?");	sc.nextLine();
+    			String y = sc.nextLine();
+    		        Filme filme1 = filmes.get(y);
+    		        if (filme1 != null) {
+    		            filme1.imprimirInformacoes();
                 }
             }
 
