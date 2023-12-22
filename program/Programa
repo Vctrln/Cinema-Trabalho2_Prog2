@@ -74,12 +74,12 @@ public class Programa {
             Date horario4 = sdf.parse("21/12/2023 14:30");
             Date horario5 = sdf.parse("21/12/2023 17:45");
 
-            Sessao sessao1 = new Sessao(filmeA, horario1, TipoSessao.SESSÃO2D, sala1);
-            Sessao sessao2 = new Sessao(filmeB, horario1, TipoSessao.SESSÃO3D, sala2);
-            Sessao sessao3 = new Sessao(filmeC, horario2, TipoSessao.SESSÃO2D, sala1);
-            Sessao sessao4 = new Sessao(filmeD, horario2, TipoSessao.SESSÃO2D, sala2);
-            Sessao sessao5 = new Sessao(filmeE, horario3, TipoSessao.SESSÃO3D, sala1);
-            Sessao sessao6 = new Sessao(filmeF, horario3, TipoSessao.SESSÃO2D, sala2);
+            Sessao sessao1 = new Sessao(filmeA, horario1, Tiposessao.SESSÃO2D, sala1);
+            Sessao sessao2 = new Sessao(filmeB, horario1, Tiposessao.SESSÃO3D, sala2);
+            Sessao sessao3 = new Sessao(filmeC, horario2, Tiposessao.SESSÃO2D, sala1);
+            Sessao sessao4 = new Sessao(filmeD, horario2, Tiposessao.SESSÃO2D, sala2);
+            Sessao sessao5 = new Sessao(filmeE, horario3, Tiposessao.SESSÃO3D, sala1);
+            Sessao sessao6 = new Sessao(filmeF, horario3, Tiposessao.SESSÃO2D, sala2);
             
             //Criando as instancias da sessão da estreia
             Date dataEstreiaFilmeG = new SimpleDateFormat("dd/MM/yyyy").parse("15/01/2024");
@@ -89,12 +89,12 @@ public class Programa {
             Date dataEstreiaFilmeK = new SimpleDateFormat("dd/MM/yyyy").parse("29/01/2024");
             Date dataEstreiaFilmeL = new SimpleDateFormat("dd/MM/yyyy").parse("02/02/2024");
             
-            Sessao sessao7 = new Sessao(filmeG, dataEstreiaFilmeG, TipoSessao.SESSÃO3D, sala1);
-            Sessao sessao8 = new Sessao(filmeH, dataEstreiaFilmeH, TipoSessao.SESSÃO2D, sala2);
-            Sessao sessao9 = new Sessao(filmeI, dataEstreiaFilmeI, TipoSessao.SESSÃO2D, sala1);
-            Sessao sessao10 = new Sessao(filmeJ, dataEstreiaFilmeJ, TipoSessao.SESSÃO3D, sala2);
-            Sessao sessao11 = new Sessao(filmeK, dataEstreiaFilmeK, TipoSessao.SESSÃO2D, sala1);
-            Sessao sessao12 = new Sessao(filmeL, dataEstreiaFilmeL, TipoSessao.SESSÃO3D, sala2);
+            Sessao sessao7 = new Sessao(filmeG, dataEstreiaFilmeG, Tiposessao.SESSÃO3D, sala1);
+            Sessao sessao8 = new Sessao(filmeH, dataEstreiaFilmeH, Tiposessao.SESSÃO2D, sala2);
+            Sessao sessao9 = new Sessao(filmeI, dataEstreiaFilmeI, Tiposessao.SESSÃO2D, sala1);
+            Sessao sessao10 = new Sessao(filmeJ, dataEstreiaFilmeJ, Tiposessao.SESSÃO3D, sala2);
+            Sessao sessao11 = new Sessao(filmeK, dataEstreiaFilmeK, Tiposessao.SESSÃO2D, sala1);
+            Sessao sessao12 = new Sessao(filmeL, dataEstreiaFilmeL, Tiposessao.SESSÃO3D, sala2);
         
         
             // Exibindo detalhes de uma sessão
@@ -222,9 +222,9 @@ public class Programa {
         //Array que obtem sessões disponiveis
         private static List<Sessao> obterSessoesDisponiveis(Filme filme, int escolhaHorario) {
             return Arrays.asList(
-                    new Sessao(filme, new Date(), TipoSessao.SESSÃO2D, new Sala(1, 100)),
-                    new Sessao(filme, new Date(), TipoSessao.SESSÃO3D, new Sala(2, 120)),
-                    new Sessao(filme, new Date(), TipoSessao.SESSÃO2D, new Sala(3, 80))
+                    new Sessao(filme, new Date(), Tiposessao.SESSÃO2D, new Sala(1, 100)),
+                    new Sessao(filme, new Date(), Tiposessao.SESSÃO3D, new Sala(2, 120)),
+                    new Sessao(filme, new Date(), Tiposessao.SESSÃO2D, new Sala(3, 80))
             );
         }
 
