@@ -204,8 +204,11 @@ public class Programa {
                 int escolhaHorario = lerInteiroDoUsuario("Digite o número do horário desejado: ");
                 List<Sessao> sessoesDisponiveis = obterSessoesDisponiveis(filmeSelecionado, escolhaHorario);
                 if (!sessoesDisponiveis.isEmpty()) {
-                    exibirSessoesDisponiveis(sessoesDisponiveis);
+                	exibirSessoesDisponiveis(sessoesDisponiveis);
                     int escolhaSessao = lerInteiroDoUsuario("Escolha o número da sessão desejada: ");
+                    mostrarAssentos(sessoesDisponiveis.get(escolhaSessao).getSala());
+                    reservarAssentos(sessoesDisponiveis.get(escolhaSessao).getSala(), sc);
+                    mostrarAssentos(sessoesDisponiveis.get(escolhaSessao).getSala());
                     System.out.println("Ingresso comprado com sucesso para a sessão " + escolhaSessao + "!");
                 } else {
                     System.out.println("Nenhuma sessão disponível para o horário escolhido.");
